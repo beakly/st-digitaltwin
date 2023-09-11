@@ -16,10 +16,13 @@ if "messages" not in st.session_state:
 if "persona" not in st.session_state:
     st.session_state.persona = None
 
+if "key" not in st.session_state:
+    st.session_state.key = None
+
 st.title('Persona constructor')
 
 placeholder = '''
-Age: 24
+Age: 32
 Gender: male 
 Ethnicity: caucasian 
 Income: NZD120,000 
@@ -34,6 +37,8 @@ Country of residence: new zealand
 Prior foreign countries visited: australia, united kingdom 
 Hobbies: hiking 
 '''
+
+st.session_state.key = st.text_input('API key')
 
 st.session_state.persona = st.text_area('Persona input', 
                                         placeholder=placeholder, height=500)

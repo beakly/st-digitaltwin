@@ -2,7 +2,8 @@ import streamlit as st
 import openai
 
 openai.api_type = "azure"
-openai.api_key = st.secrets['API_KEY']
+# openai.api_key = st.secrets['API_KEY']
+openai.api_key = st.session_state.key
 openai.api_base = "https://oai-oaichat-sbx-eus-001.openai.azure.com"
 openai.api_version = "2023-03-15-preview"
 
